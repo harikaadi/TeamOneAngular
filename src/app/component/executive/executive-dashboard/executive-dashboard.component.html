@@ -1,0 +1,20 @@
+
+<!-- First Row: Navbar (Fixed at the top) -->
+<div class="row">
+    <div class="col-12">
+        <app-executive-navbar></app-executive-navbar>
+    </div>
+</div>
+
+<!-- Second Row: Sidebar and Content (with padding to avoid overlap) -->
+<div class="row mt-3">
+    <!-- Sidebar Column -->
+    <div class="col-sm-3 vh-100 bg-dark text-white overflow-auto ">
+        <app-executive-sidebar></app-executive-sidebar>
+    </div>
+
+    <!-- Content Column -->
+    <div class="col-sm-9 p-4">
+        <router-outlet></router-outlet> <!-- Routed content goes here -->
+    </div>
+</div>

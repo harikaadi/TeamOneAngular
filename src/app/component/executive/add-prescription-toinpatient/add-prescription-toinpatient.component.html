@@ -1,0 +1,61 @@
+<p>add-prescription-toinpatient works!</p>
+<div class="row justify-content-center">
+    <div class="col-12">
+        <app-executive-navbar></app-executive-navbar>
+    </div>
+</div>
+<div class="row mt-4">
+    <p>add-prescription-to-inpatient works!</p>
+    <div class="assign-test-container">
+        <h3>Add Prescription to Inpatient</h3>
+        <form class="assign-test-form">
+            <!-- Display PID and DID as read-only form inputs -->
+            <div class="form-group">
+                <label for="pid">Patient ID:</label>
+                <input type="text" id="pid" [value]="pid" readonly class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="did">Doctor ID:</label>
+                <input type="text" id="did" [value]="did" readonly class="form-control" />
+            </div>
+
+            <!-- Input for Medicine Name -->
+            <div class="form-group">
+                <label for="medicineName">Medicine Name:</label>
+                <input type="text" id="medicineName" [(ngModel)]="medicineName" name="medicineName" class="form-control" required />
+            </div>
+
+            <!-- Input for Dosage -->
+            <div class="form-group">
+                <label for="dosage">Dosage:</label>
+                <input type="text" id="dosage" [(ngModel)]="dosage" name="dosage" class="form-control" required />
+            </div>
+
+            <!-- Input for Treatment Plan -->
+            <div class="form-group">
+                <label for="treatmentPlan">Treatment Plan:</label>
+                <textarea id="treatmentPlan" [(ngModel)]="treatmentPlan" name="treatmentPlan" class="form-control" required></textarea>
+            </div>
+
+            <!-- Add Prescription button -->
+            <button type="button" class="btn btn-primary" (click)="onAdd()">Add Prescription</button>
+
+            <!-- Success and Error Messages -->
+            <p *ngIf="successMsg" class="success">{{ successMsg }}</p>
+            <p *ngIf="errorMsg" class="error">{{ errorMsg }}</p>
+        </form>
+    </div>
+</div>
+
+<!--div class="form-group">
+    <label for="pid">Patient ID:</label>
+    <input type="text" id="pid" [value]="pid" readonly class="form-control" />
+  </div>
+  <div class="form-group">
+    <label for="did">Doctor ID:</label>
+    <input type="text" id="did" [value]="did" readonly class="form-control" />
+  </div>
+<h1>pid</h1>
+
+<h1>did</h1-->
+

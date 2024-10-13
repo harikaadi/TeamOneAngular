@@ -1,0 +1,132 @@
+<p>summary works!</p>
+<!--div class="mt-2"> 
+    <label>Name: </label>
+    <input type="text" class="form-control" [(ngModel)]="name" (change)="onChange()">
+</div>
+<div class="mt-2">
+    <label>PhoneNumber: </label>
+    <input type="text" class="form-control" [(ngModel)]="phoneNumber" (change)="onChange()">
+</div>
+<div class="mt-2"> 
+    <label>Gender: </label>
+    <input type="text" class="form-control" [(ngModel)]="gender" (change)="onChange()">
+</div>
+<div class="mt-2"> 
+    <label>Age: </label>
+    <input type="text" class="form-control" [(ngModel)]="age" (change)="onChange()">
+</div>
+<div class="mt-2"> 
+    <label>BloodGroup: </label>
+    <input type="text" class="form-control" [(ngModel)]="bloodgroup" (change)="onChange()">
+</div>
+<div class="mt-2"> 
+    <label>Address: </label>
+    <input type="text" class="form-control" [(ngModel)]="address" (change)="onChange()">
+</div>
+<div class="mt-2"> 
+    <label>Username: </label>
+    <input type="text" class="form-control" [(ngModel)]="user.username" (change)="onChange()">
+</div>
+<div class="mt-2"> 
+    <label>Password: </label>
+    <input type="text" class="form-control" [(ngModel)]="user.password" (change)="onChange()">
+</div-->
+<!-- Section 1: Personal Information -->
+<div class="section" style="border: 1px solid #ccc; padding: 15px; margin-bottom: 15px;">
+    <div class="alert alert-dark" role="alert" *ngIf="successMsg">
+        {{successMsg}}
+        <div class="alert alert-dark" role="alert" *ngIf="successMsg2">
+            {{successMsg2}}
+         </div>
+     </div>
+     <div class="alert alert-dark" role="alert" *ngIf="successMsg3">
+        {{successMsg3}}
+     </div>
+     <div class="alert alert-primary" role="alert" *ngIf="errorMsg">
+       {{errorMsg}}
+     </div>
+    <h3>Personal Information</h3>
+    <div class="mt-2"> 
+        <label>Name: </label>
+        <input type="text" class="form-control" [(ngModel)]="name" (change)="onChange()">
+    </div>
+    <div class="mt-2">
+        <label>Phone Number: </label>
+        <input type="text" class="form-control" [(ngModel)]="phoneNumber" (change)="onChange()">
+    </div>
+    <div class="mt-2"> 
+        <label>Gender: </label>
+        <input type="text" class="form-control" [(ngModel)]="gender" (change)="onChange()">
+    </div>
+    <div class="mt-2"> 
+        <label>Age: </label>
+        <input type="text" class="form-control" [(ngModel)]="age" (change)="onChange()">
+    </div>
+    <div class="mt-2"> 
+        <label>Blood Group: </label>
+        <input type="text" class="form-control" [(ngModel)]="bloodgroup" (change)="onChange()">
+    </div>
+    <div class="mt-2"> 
+        <label>Address: </label>
+        <input type="text" class="form-control" [(ngModel)]="address" (change)="onChange()">
+    </div>
+    <div class="mt-2"> 
+        <label>Enter Username: </label>
+        <input type="text" class="form-control" [(ngModel)]="user.username" (change)="onChange()">
+    </div>
+    <div class="mt-2"> 
+        <label>Enter Password: </label>
+        <input type="text" class="form-control" [(ngModel)]="user.password" (change)="onChange()">
+    </div>
+</div>
+
+<!-- Section 2: Medical Details -->
+<div class="section" style="border: 1px solid #ccc; padding: 15px; margin-bottom: 15px;">
+    <h3>Medical Health Details</h3>
+    <div class="mt-2"> 
+        <label>Medical Condition: </label>
+        <input type="text" class="form-control" [(ngModel)]="medicalCondition" (change)="onChange()">
+    </div>
+    <div class="mt-2"> 
+        <label>sinceWhen: </label>
+        <input type="text" class="form-control" [(ngModel)]="sinceWhen" (change)="onChange()">
+    </div>
+</div>
+
+<!-- Section 3: Account Security -->
+<div class="section" style="border: 1px solid #ccc; padding: 15px;">
+    <h3>Admission Details</h3>
+    <div class="mt-2"> 
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <label>Select RoomType: </label>
+                        <select  [(ngModel)]="roomtypeSummary" (change)="onChange()">
+                             <option *ngFor="let r of roomtype" > 
+                                {{r}}
+                             </option>
+                            </select>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <label>Select CommonHealthIssue: </label>
+                        <select [(ngModel)]="commonhealthissueSummary"  (change)="onChange()">
+                             <option *ngFor="let h of healthissues" > 
+                                {{h}}
+                             </option>
+                            </select>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <label> AdmissionType</label>
+                 <input class="form-control" type="text" [(ngModel)]="admissiontypeSummary" (change)="onChange()">
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-footer">
+        <button (click)="onSubmit()">Add Schedule</button>
+    </div>
+</div>
+

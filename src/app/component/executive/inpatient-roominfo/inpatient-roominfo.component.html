@@ -1,0 +1,44 @@
+<p>inpatient-roominfo works!</p>
+<div class="container mt-4">
+    <!-- Row 1: Display Available Rooms as Cards -->
+    <div class="row">
+        <div class="col-md-4" *ngFor="let room of roomsavaliable">
+            <div class="card mb-4">
+                <!-- Using placeholder images from Unsplash -->
+                <div class="card-body">
+                    <h5 class="card-title">RoomType:{{room.roomtype}}</h5>
+                    <p class="card-text">Price:{{room.rate}} ₹</p>
+                    <p class="card-text">Available Beds:{{room.bedsCount}} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Row 2: Dropdown to Select Room Type -->
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <label>Select RoomType: </label>
+                    <select  [(ngModel)]="roomtypeSelected" (change)="onChange()">
+                         <option *ngFor="let r of roomtype" > 
+                            {{r}}
+                         </option>
+                        </select>
+        </div>
+        <div class="col-md-4">
+            <label>Select CommonHealthIssue: </label>
+                    <select [(ngModel)]="commonHealthIsuueSelected"  (change)="onChange()">
+                         <option *ngFor="let h of healthissues" > 
+                            {{h}}
+                         </option>
+                        </select>
+        </div>
+        
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <label> AdmissionType</label>
+             <input class="form-control" type="text" [(ngModel)]="admissionType" (change)="onChange()">
+        </div>
+    </div>
+</div>
+

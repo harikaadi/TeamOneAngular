@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+    <div class="col-12">
+        <app-executive-navbar></app-executive-navbar>
+    </div>
+</div>
+
+<div class="row justify-content-center mt-4">
+    <div class="col-12 col-md-8 col-lg-6">
+        <div class="container mt-4 custom-container">
+            <p class="text-center font-weight-bold">Upload Test Result for Inpatient</p>
+
+            <!-- InpatientTest ID Section -->
+            <div class="form-group">
+                <label for="itestid" class="form-label">InpatientTest ID:</label>
+                <input type="number" id="itestid" [value]="itestid" readonly class="form-control" />
+            </div>
+
+            <!-- Uploaded Images Section -->
+            <div *ngIf="images?.length > 0" class="alert alert-warning mt-4">
+                <h4>Uploaded Images:</h4>
+                <ul class="list-unstyled">
+                    <li *ngFor="let i of images" class="mb-2">
+                        <span class="badge bg-secondary">{{ i }}</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Message Display Section -->
+            <div *ngIf="imageMsg != ''" class="alert alert-primary mt-3 text-center">
+                {{ imageMsg }}
+            </div>
+
+            <!-- File Upload Section -->
+            <div class="input-group mt-4">
+                <input type="file" class="form-control" (change)="onChange($event)" aria-label="Upload" />
+                <button class="btn btn-primary" (click)="onUpload()">Upload Image</button>
+            </div>
+        </div>
+    </div>
+</div>

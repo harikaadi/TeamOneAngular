@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-12">
+        <app-executive-navbar></app-executive-navbar>
+    </div>
+</div>
+<div class="row mt-4">
+<p>assign-test-toinpatient works!</p>
+<div class="assign-test-container">
+    <h3>Assign Test to Inpatient</h3>
+    &nbsp;&nbsp;
+    <form class="assign-test-form">
+      <!-- Display PID and DID as read-only form inputs -->
+      <div class="form-group">
+        <label for="pid">Patient ID:</label>
+        <input type="text" id="pid" [value]="pid" readonly class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="did">Doctor ID:</label>
+        <input type="text" id="did" [value]="did" readonly class="form-control" />
+      </div>
+  
+      <!-- Dropdown for selecting test -->
+      <div class="form-group">
+        <label for="testName">Select Test:</label>
+        <select id="testName" [(ngModel)]="selectedTestName" name="testnames" required class="form-control">
+          <option value="" disabled selected>Select a test</option>
+          <option *ngFor="let test of testnames" [value]="test">{{ test }}</option>
+        </select>
+      </div>
+  
+      <!-- Assign Test button -->
+      <button type="button" class="btn btn-primary" (click)="onAssignTest(selectedTestName)">Assign Test</button>
+      <!-- Success and Error Messages -->
+    <p *ngIf="successMsg" class="success">{{ successMsg }}</p>
+    <p *ngIf="successMsgAssignTest" class="success">{{ successMsgAssignTest }}</p>
+    <p *ngIf="errorMsg" class="error">{{ errorMsg }}</p>
+    </form>
+
+  </div>
+</div>
+  

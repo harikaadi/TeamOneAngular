@@ -1,0 +1,73 @@
+
+<!-- inpatient-list.component.html <p>admission-getall works!</p> -->
+<div class="row justify-content-center">
+    <div class="col-12">
+        <app-executive-navbar></app-executive-navbar>
+    </div>
+</div>
+
+<!-- Second Row: Sidebar and Table -->
+<div class="row mt-4">
+    <!-- Sidebar Column -->
+    <!--div class="col-md-3--">
+        //rendaring sidebar
+        <p>side bar</p>
+    </div-->
+   
+    <!-- Table Column -->
+    <div class="col-md-10 justify-content-center" >
+        <h4>All Patient Admission Details</h4>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">InPatient Id</th>
+                    <th scope="col">InPatient Name</th>
+                    <th scope="col">Doctor Id</th>
+                    <th scope="col">Doctor Name</th>
+                    <th scope="col">Admission Date</th>
+                    <th scope="col">Admission Type</th>
+                    <th scope="col">Admission Status</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let i of inpatientadmissions">
+                    <td>{{ i.id }}</td>
+                    <td>{{ i.inpatient.id }}</td>
+                    <td>{{ i.inpatient.name }}</td>
+                    <td>{{ i.doctor.id }}</td>
+                    <td>{{ i.doctor.name }}</td>
+                    <td>{{ i.admissionDate }}</td>
+                    <td>{{ i.admissionType }}</td>
+                    <td>{{ i.admissionStatus }}</td>
+                    <td>
+                        <button (click)="onAssignTest(i.inpatient.id,i.doctor.id)">Assign Test</button>
+                        &nbsp;&nbsp;&nbsp;
+                        <button (click)="onAddPrescription(i.inpatient.id,i.doctor.id)">Add Prescroption</button>
+                       
+                    </td>
+                    
+                </tr>
+            </tbody>
+        </table>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item">
+                <button class="page-link"  [disabled]="first == true" (click)="onPrev()"> Prev</button>
+              </li>
+              <span *ngFor="let n of numArray">
+                <button class="page-link"   (click)="onPageNumberClick(n)"> {{n+1}}</button>
+              </span>
+              
+               
+              <li class="page-item">
+                <button class="page-link"  [disabled]="last == true" (click)="onNext()"> Next</button>
+              </li>
+            </ul>
+          </nav>
+    </div>
+</div>
+
+
+ 

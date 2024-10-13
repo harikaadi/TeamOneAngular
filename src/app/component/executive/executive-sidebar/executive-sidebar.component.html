@@ -1,0 +1,37 @@
+<p>executive-sidebar works!</p>
+<div class="sidebar bg-dark text-white fixed-start vh-100">
+    <h4 class="p-3">Menu</h4>
+    <ul class="nav flex-column">
+        <!-- Onboard Inpatient -->
+        <li class="nav-item">
+            <a class="nav-link text-white" href="inpatient/onboard">Onboard Inpatient</a>
+        </li>
+
+        <!-- Assign Test to Patients -->
+        <li class="nav-item">
+            <a class="nav-link text-white" href="#assign-tests" data-bs-toggle="collapse" aria-expanded="false" aria-controls="assign-tests">Assign Test And Prescription to Patients</a>
+            <ul id="assign-tests" class="nav flex-column collapse ms-3">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/admission/getall">Inpatients</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/assign-test/opdpatients">OPD Patients</a>
+                </li>
+            </ul>
+        </li>
+
+        <!-- Upload Results -->
+        <li class="nav-item">
+            <a class="nav-link text-white" href="#upload-results" data-bs-toggle="collapse" aria-expanded="false" aria-controls="upload-results">Upload Results</a>
+            <ul id="upload-results" class="nav flex-column collapse ms-3">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/inpatient/test/getall">Inpatients</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/upload-results/opdpatients">OPD Patients</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+

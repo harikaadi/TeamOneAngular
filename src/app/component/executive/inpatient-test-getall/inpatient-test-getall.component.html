@@ -1,0 +1,67 @@
+
+<div class="row justify-content-center">
+    <div class="col-12">
+        <app-executive-navbar></app-executive-navbar>
+    </div>
+</div>
+
+<!-- Second Row: Sidebar and Table -->
+<div class="row mt-4">
+    <!-- Sidebar Column -->
+    <!--div class="col-md-3--">
+        //rendaring sidebar
+        <p>side bar</p>
+    </div-->
+   
+    <!-- Table Column -->
+    <div class="col-md-8">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>InPatient Id</th>
+                    <th>InPatient Name</th>
+                    <th>Doctor Id</th>
+                    <th>Doctor Name</th>
+                    <th>Test Id</th>
+                    <th>Test Name</th>
+                    <th>Test Price</th>
+                    <th>Test Assigned Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let i of inpatienttests">
+                    <td>{{ i.id }}</td>
+                    <td>{{ i.inpatient.id }}</td>
+                    <td>{{ i.inpatient.name }}</td>
+                    <td>{{ i.doctor.id }}</td>
+                    <td>{{ i.doctor.name }}</td>
+                    <td>{{ i.test.id }}</td>
+                    <td>{{ i.test.testName}}</td>
+                    <td>{{ i.test.price}}</td>
+                    <td>{{ i.date }}</td>
+                    <td>
+                        <button (click)="onUploadTestResult(i.id)">Upload Test Result</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item">
+                <button class="page-link"  [disabled]="first == true" (click)="onPrev()"> Prev</button>
+              </li>
+              <span *ngFor="let n of numArray">
+                <button class="page-link"   (click)="onPageNumberClick(n)"> {{n+1}}</button>
+              </span>
+              
+               
+              <li class="page-item">
+                <button class="page-link"  [disabled]="last == true" (click)="onNext()"> Next</button>
+              </li>
+            </ul>
+          </nav>
+    </div>
+</div>
+
