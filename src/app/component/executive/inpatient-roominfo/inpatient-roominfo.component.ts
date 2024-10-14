@@ -50,6 +50,19 @@ export class InpatientRoominfoComponent implements OnInit{
     })
 
   }
+  getRoomImage(roomtype: string): string {
+    switch (roomtype) {
+        case 'GENERAL_WARD_ROOM':
+            return 'generalward.jpeg';//generalward
+        case 'PRIVATE_ROOM':
+            return 'privateroom.jpg';
+        // Add cases for other room types with their respective image paths
+        case 'SEMI_PRIVATE_ROOM':
+          return 'semiprivateroom.jpg';
+        default:
+            return 'assets/images/defaultroom.jpg'; // Fallback image
+    }
+  }
   ngOnInit(): void {
     this.inpatientservice.admissioninfo$.subscribe(admission=>{
       this.roomtypeSelected = admission.roomtype;

@@ -32,11 +32,20 @@ export class InpatientMedicalinfoComponent implements OnInit{
     })
     
   }
+
+  onFileChange(event: any) {
+    const file: File = event.target.files[0];
+    if (file) {
+        this.medicalHistory.file = file;  // Assign selected file to medical history
+        this.onChange();
+    }
+  }
   onChange(){
     const updatedMedicalHistory = new MedicalHistory();
     updatedMedicalHistory.medicalCondition=this.medicalCondition;
     updatedMedicalHistory.sinceWhen=this.sinceWhen;
     //updatedMedicalHistory.inpatient.id=this.inpatient.id;
+    updatedMedicalHistory.file = this.medicalHistory.file;
 
     this.mhs.setInpatient(updatedMedicalHistory);
 

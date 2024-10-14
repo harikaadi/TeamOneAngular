@@ -5,6 +5,7 @@ export class MedicalHistory{
     medicalCondition:string;
     sinceWhen:string;
     inpatient:Inpatient;
+    file?: File; 
     constructor(){
         this.inpatient=new Inpatient();
     }

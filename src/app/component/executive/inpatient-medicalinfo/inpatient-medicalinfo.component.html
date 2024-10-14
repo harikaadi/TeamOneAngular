@@ -1,4 +1,27 @@
-<p>inpatient-medicalinfo works!</p>
+
+<div class="container my-4">
+    <div class="card shadow p-4">
+        <h3 class="card-title text-center mb-4">Medical Information</h3>
+        
+        <div class="form-group mt-3">
+            <label for="medicalCondition">Medical Condition:</label>
+            <input type="text" id="medicalCondition" class="form-control" [(ngModel)]="medicalCondition" (change)="onChange()">
+        </div>
+        
+        <div class="form-group mt-3">
+            <label for="sinceWhen">Since When:</label>
+            <input type="text" id="sinceWhen" class="form-control" [(ngModel)]="sinceWhen" (change)="onChange()">
+        </div>
+
+        <!-- File input for uploading a medical report -->
+        <div class="form-group mt-3">
+            <label for="medicalFile">Upload Medical Report:</label>
+            <input type="file" id="medicalFile" class="form-control"  (change)="onFileChange($event)" >
+        </div>
+        
+        
+    </div>
+</div><!--p>inpatient-medicalinfo works!</p>
 <div class="mt-2"> 
     <label>MedicalCondition: </label>
     <input type="text" class="form-control" [(ngModel)]="medicalCondition" (change)="onChange()">
@@ -6,5 +29,5 @@
 <div class="mt-2"> 
     <label>sinceWhen: </label>
     <input type="text" class="form-control" [(ngModel)]="sinceWhen" (change)="onChange()">
-</div>
+</div-->
 

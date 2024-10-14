@@ -1,10 +1,63 @@
-<p>inpatient-roominfo works!</p>
 <div class="container mt-4">
+    <h4 class="section-title text-center mb-4">Available Rooms</h4>
+
     <!-- Row 1: Display Available Rooms as Cards -->
     <div class="row">
         <div class="col-md-4" *ngFor="let room of roomsavaliable">
+            <div class="card room-card mb-4" >
+                <img 
+                    class="card-img-top" 
+                    [src]="getRoomImage(room.roomtype)"
+                    alt="Room image" 
+                >
+                <div class="card-body">
+                    <h5 class="card-title">Room Type: {{room.roomtype}}</h5>
+                    <p class="card-text">Price: {{room.rate}} ₹</p>
+                    <p class="card-text">Available Beds: {{room.bedsCount}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Row 2: Dropdown to Select Room Type -->
+    <h4 class="section-title text-center mt-4">Admission Details</h4>
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-4">
+            <label>Select Room Type:</label>
+            <select class="form-control" [(ngModel)]="roomtypeSelected" (change)="onChange()">
+                <option *ngFor="let r of roomtype">{{r}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-4">
+            <label>Select Common Health Issue:</label>
+            <select class="form-control" [(ngModel)]="commonHealthIsuueSelected" (change)="onChange()">
+                <option *ngFor="let h of healthissues">{{h}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row  justify-content-center mt-4">
+        <div class="col-md-4">
+            <label>Admission Details:</label>
+            <input class="form-control" type="text" [(ngModel)]="admissionType" (change)="onChange()">
+        </div>
+    </div>
+</div>
+
+<!--p>inpatient-roominfo works!</p>
+<div class="container mt-4"-->
+    <!-- Row 1: Display Available Rooms as Cards -->
+     <!-- Using placeholder images from Unsplash >
+    <div class="row">
+        <div class="col-md-4" *ngFor="let room of roomsavaliable">
             <div class="card mb-4">
-                <!-- Using placeholder images from Unsplash -->
+                
+                <img 
+                class="card-img-top" 
+                [src]="getRoomImage(room.roomtype)"
+                alt="Room image" 
+            >
                 <div class="card-body">
                     <h5 class="card-title">RoomType:{{room.roomtype}}</h5>
                     <p class="card-text">Price:{{room.rate}} ₹</p>
@@ -12,9 +65,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div-->
 
-    <!-- Row 2: Dropdown to Select Room Type -->
+    <!-- Row 2: Dropdown to Select Room Type >
     <div class="row mt-4">
         <div class="col-md-4">
             <label>Select RoomType: </label>
@@ -40,5 +93,5 @@
              <input class="form-control" type="text" [(ngModel)]="admissionType" (change)="onChange()">
         </div>
     </div>
-</div>
+</div-->
 

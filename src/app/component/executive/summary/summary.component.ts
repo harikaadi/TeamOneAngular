@@ -28,6 +28,9 @@ export class SummaryComponent implements OnInit{
     medicalCondition:string;
     sinceWhen:string;
     inpatient:Inpatient;
+    file: File = null; 
+    medicalFileName: string;  // For displaying file name in the summary
+
     //admission
     roomtypeSummary:string;
     commonhealthissueSummary:string;
@@ -46,9 +49,11 @@ export class SummaryComponent implements OnInit{
   successMsg2:string=undefined
   successMsg3:string=undefined
   errorMsg:string=undefined
+  successMsgFile:string=undefined
 
   doctorName:string;
   roomId:number;
+  
 
   constructor(private patientservice:InpatientService,private medicalhistoryservice:MedicalhistoryService){
      //geting all rooms types
@@ -82,6 +87,9 @@ export class SummaryComponent implements OnInit{
     this.medicalCondition = MedicalHistory.medicalCondition;
     this.sinceWhen = MedicalHistory.sinceWhen;
     //this.inpatient.id=MedicalHistory.inpatient.id;
+    this.medicalFileName = MedicalHistory.file ? MedicalHistory.file.name : '';  // Display file name
+    this.file=MedicalHistory.file;
+    
     console.log(MedicalHistory)
   })
   this.patientservice.admissioninfo$.subscribe(Admission=>{
@@ -127,6 +135,19 @@ export class SummaryComponent implements OnInit{
                  this.errorMsg = err.message
               }
             })
+          //Uploading medical document
+          const formData = new FormData();
+      formData.append('file', this.file);
+          this.medicalhistoryservice.uploadMedicalDocuments(formData,this.patientid).subscribe({
+            next:(data)=>{
+              this.successMsgFile="Medical History File Uploaded!!!"
+            },
+            error:(err)=>{
+              this.successMsgFile=undefined;
+              console.log(err);
+
+            }
+          })
         //admission api
         this.patientservice.addAppointment(this.patientid,this.commonhealthissueSummary,this.roomtypeSummary,{ "admissionType":this.admissiontypeSummary}
         ).subscribe({
