@@ -46,6 +46,10 @@ export class LoginComponent {
                     case 'ROLE_PATIENT':
                      console.log('in patient dashboard')
                       break; 
+                    case 'ROLE_OPDPATIENT':
+                      console.log('opd patient')
+                      this.router.navigateByUrl('opddashboard')
+                      break;
                     case 'ROLE_ADMIN':
                       this.router.navigateByUrl('admin/dashboard')
                       break;

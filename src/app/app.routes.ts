@@ -18,9 +18,27 @@ import { InpatientTestGetallComponent } from './component/executive/inpatient-te
 import { UploadTestResultInpatientComponent } from './component/executive/upload-test-result-inpatient/upload-test-result-inpatient.component';
 import { AddPrescriptionToinpatientComponent } from './component/executive/add-prescription-toinpatient/add-prescription-toinpatient.component';
 
+import { OpdNavbarComponent } from './component/OPDPatient/opd-navbar/opd-navbar.component';
+import { OpdDashboardComponent } from './component/OPDPatient/opd-dashboard/opd-dashboard.component';
+import { SpecilizationComponent } from './component/OPDPatient/specilization/specilization.component';
+import { DoctorBySpecilizationComponent } from './component/OPDPatient/doctor-by-specilization/doctor-by-specilization.component';
+import { DoctorScheduleComponent } from './component/OPDPatient/doctor-schedule/doctor-schedule.component';
+import { LandingPageComponent } from './component/main/landing-page/landing-page.component';
+import { DisplaySpecializationComponent } from './component/main/display-specialization/display-specialization.component';
+import { OPDRegisterComponent } from './component/main/opdregister/opdregister.component';
+
 export const routes: Routes = [
+   {
+      "path":"",component:LandingPageComponent
+   },
+   {
+       "path":"display/specialization",component:DisplaySpecializationComponent
+   },
+   {
+      "path":"opd/register",component:OPDRegisterComponent
+   },
     {
-        "path" : "" , component: LoginComponent
+        "path" : "login" , component: LoginComponent
     },
     {
         "path" : "admin/dashboard" , component:AdminDashboardComponent
@@ -70,4 +88,23 @@ export const routes: Routes = [
      {
         "path" : "logout/l" , component :LogoutComponent
      },
+
+
+    
+     {
+        "path":"opddashboard",component:OpdDashboardComponent
+     },
+     {
+        "path":"OPDPatient/navbar",component:OpdNavbarComponent
+     },
+     {
+      "path":"specilization/list",component:SpecilizationComponent
+     },
+
+     {
+      "path":"doctor/:specialization",component:DoctorBySpecilizationComponent
+     },
+     {
+      "path":"doctor-schedule/:id",component:DoctorScheduleComponent
+     }
 ];

@@ -1,0 +1,207 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #8697C4; /* Updated background color */
+    color: white;
+    border-radius: 15px; /* Added rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for smoother appearance */
+    margin: 20px; /* Add margin to separate navbar from page edges */
+  }
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .company-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+  }
+  
+  .nav-link {
+    margin-right: 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+  }
+  
+  .nav-button {
+    background-color: white;
+    color: #007bff;
+    border: none;
+    padding: 10px 15px;
+    margin-right: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .nav-button:hover {
+    background-color: #0056b3; /* Darker blue */
+    color: white;
+  }
+  
+  .navbar-right {
+    display: flex;
+  }
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  margin-right: 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+
+.nav-button {
+  background-color: white;
+  color: #007bff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+.landing-page {
+    font-family: Arial, sans-serif;
+    color: #333;
+    text-align: center;
+  }
+  
+  /* Hero Section */
+  .hero {
+    position: relative; /* Position relative for positioning the background */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevent overflow */
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center; /* Center text */
+  }
+  
+  .hero-background {
+    background-image: src('/landing.jpg'); /* Adjusted path */
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the image */
+    position: absolute; /* Position it absolutely within the hero section */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(8px); /* Apply blur effect */
+    z-index: 1; /* Ensure it's behind the content */
+  }
+  
+  .hero-content {
+    position: relative; /* Positioning relative to stack above the background */
+    z-index: 2; /* Stack above the background */
+    padding: 20px; /* Add padding */
+    color: black; /* Change text color to white for better visibility */
+  }
+  
+  .hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 20px;
+  }
+  
+  .cta-button {
+    background-color: #28a745; /* Button color */
+    color: black;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none; /* No border */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  .cta-button:hover {
+    background-color: #218838; /* Darker shade on hover */
+  }
+  
+  /* Other sections remain unchanged... */
+  /* Services Section */
+  .services {
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+  }
+  
+  .service-cards {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+  }
+  
+  .service-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: left;
+  }
+  
+  .service-card h3 {
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  /* About Section */
+  .about {
+    padding: 50px 20px;
+  }
+  
+  .about h2 {
+    margin-bottom: 20px;
+    color: #007bff;
+  }
+  
+  /* Testimonials Section */
+  .testimonials {
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+  }
+  
+  .testimonial {
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+  
+  .testimonial p:last-child {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #007bff;
+    color: white;
+    padding: 20px 0;
+    margin-top: 40px;
+  }
+  
+  .social-links {
+    margin-top: 10px;
+  }
+  
+  .social-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  .social-links a:hover {
+    text-decoration: underline;
+  }

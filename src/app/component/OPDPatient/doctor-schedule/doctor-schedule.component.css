@@ -1,0 +1,119 @@
+/* Background Styling */
+body {
+    background: linear-gradient(135deg, #74b9ff, #81ecec);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Container Styling */
+  .container {
+    width: 80%;
+    max-width: 600px;
+    padding: 40px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.6s ease-out;
+  }
+  
+  /* Header Styling */
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #2d3436;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  
+  /* Form Group Styling */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #636e72;
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  /* Select Box Styling */
+  select {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 12px;
+    background: #dfe6e9;
+    color: #2d3436;
+    transition: all 0.3s ease;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  select:hover {
+    background: #b2bec3;
+  }
+  
+  select:focus {
+    background: #74b9ff;
+    color: white;
+    box-shadow: 0 0 10px rgba(116, 185, 255, 0.8);
+  }
+  
+  /* Button Styling */
+  button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background: linear-gradient(135deg, #81ecec, #74b9ff);
+  }
+  
+  /* Animation for the Container */
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Mobile Responsive Design */
+  @media (max-width: 576px) {
+    .container {
+      width: 90%;
+      padding: 30px;
+    }
+  
+    h2 {
+      font-size: 1.8rem;
+    }
+  
+    select {
+      font-size: 0.95rem;
+    }
+  
+    button {
+      font-size: 1rem;
+    }
+  }
+  

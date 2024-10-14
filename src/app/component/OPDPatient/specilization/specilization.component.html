@@ -1,0 +1,33 @@
+
+<div class="container">
+    <div class="row">
+      <div class="col-lg-12 mt-4">
+        <div class="alert alert-primary">
+          <span class="custom-user-heading">Available Specializations</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row"> 
+      <div class="col-sm-4 mt-4 custom-user-column" *ngFor="let specialization of specializations">    
+        <div class="card">
+          <div class="card-body" (click)="onSpecializationClick(specialization)">
+            <h5 class="card-title">{{ specialization }}</h5>
+            <div class="card-text">
+              <!-- You can add more details about the specialization here if needed -->
+              <p>Click for more details</p>
+            </div>
+            <button 
+            class="btn btn-primary" 
+            (click)="onSpecializationClick(specialization)">
+            View Doctors
+          </button>
+            <!--a [routerLink]="['/doctor', specialization]" class="card-link">View Doctors</a-->
+            <!--a (click)="onSpecializationClick(specialization)" class="card-link">View Doctors</a-->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

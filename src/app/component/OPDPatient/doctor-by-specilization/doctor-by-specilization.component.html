@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 mt-4">
+      <div class="alert alert-primary">
+        <span class="custom-user-heading">Doctors in {{ specialization }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4 mt-4" *ngFor="let doctor of doctors">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ doctor.name }}</h5>
+          <p class="card-text">
+            <strong>Experience:</strong> {{ doctor.experience }} years<br>
+            <strong>Qualification:</strong> {{ doctor.qualification }}<br>
+            <strong>Designation:</strong> {{ doctor.designation }}<br>
+            <strong>Email:</strong> {{ doctor.user.username }}
+          </p>
+          <div class="availability-badges">
+            <span class="badge bg-success" *ngIf="doctor.available">Available</span>
+            <span class="badge bg-danger" *ngIf="!doctor.available">Not Available</span>
+          </div>
+          <button (click)="onDoctorSelect(doctor.id)" class="btn btn-primary mt-2">Select</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
